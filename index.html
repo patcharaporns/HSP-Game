@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ethics Garden Quiz</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&family=Nunito:wght@400;600;700;800&family=Titan+One&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Nunito', sans-serif;
+        background-color: #f0fdf4;
+        overflow-x: hidden;
+      }
+      h1, h2, h3, .font-disney {
+        font-family: 'Titan One', cursive;
+        letter-spacing: 1px;
+      }
+      .pixar-shadow {
+        box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.15), 0 10px 20px -6px rgba(0, 0, 0, 0.1);
+      }
+      .garden-bg {
+        background: radial-gradient(circle at 50% 0%, #a2d9ff 0%, #ffffff 40%, #84fab0 80%, #8fd3f4 100%);
+      }
+      
+      /* Disney/Pixar glossy 3D buttons */
+      .btn-disney {
+        transition: all 0.1s cubic-bezier(0.4, 0, 0.2, 1);
+        border-bottom: 6px solid rgba(0,0,0,0.15);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      }
+      .btn-disney:active {
+        transform: translateY(4px);
+        border-bottom-width: 2px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+      }
+
+      /* Animations */
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+      }
+      .animate-float {
+        animation: float 4s ease-in-out infinite;
+      }
+      
+      @keyframes sway {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+      }
+      .animate-sway {
+        animation: sway 3s ease-in-out infinite;
+        transform-origin: bottom center;
+      }
+
+      @keyframes popIn {
+        0% { transform: scale(0) translateY(20px); opacity: 0; }
+        60% { transform: scale(1.2) translateY(-10px); opacity: 1; }
+        100% { transform: scale(1) translateY(0); opacity: 1; }
+      }
+      .animate-pop-in {
+        animation: popIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+      
+      @keyframes sunrays {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      .animate-spin-slow {
+        animation: sunrays 20s linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.41.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
